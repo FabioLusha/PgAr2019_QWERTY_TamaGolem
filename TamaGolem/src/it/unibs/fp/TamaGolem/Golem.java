@@ -1,10 +1,10 @@
 package it.unibs.fp.TamaGolem;
 
 public class Golem {
+	public static final int VITA_INIZIALE = 100;
 	
-	public static final int NUMGEMME = 5;
-	private int livVita = 100;
-	private Gemma[] gemme = new Gemma[NUMGEMME];
+	private int livVita = VITA_INIZIALE;
+	private Gemma[] gemme = new Gemma[Gemma.NUMGEMME];
 	
 	public Golem(int livVita, Gemma[] gemme) {
 		super();

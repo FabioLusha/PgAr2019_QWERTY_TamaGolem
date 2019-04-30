@@ -1,7 +1,7 @@
 package it.unibs.fp.TamaGolem;
 
 public class Gemma {
-	
+	public static final int NUMGEMME = 5;
 	private int tipo;
 
 	public Gemma(int tipo) {
