@@ -4,7 +4,7 @@ public class Golem {
 	public static final int VITA_INIZIALE = 100;
 	
 	private int livVita = VITA_INIZIALE;
-	private Gemma[] gemme = new Gemma[Gemma.NUMGEMME];
+	private Gemma[] gemme = new Gemma[Gemma.NUM_GEMME];
 	
 	public Golem(int livVita, Gemma[] gemme) {
 		super();
