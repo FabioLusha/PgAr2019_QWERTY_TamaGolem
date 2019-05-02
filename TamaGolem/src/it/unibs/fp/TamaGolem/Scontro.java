@@ -6,7 +6,7 @@ public class Scontro {
 	
 	Sacco s1 = new Sacco();
 	
-	public String[] scegliePietre() {
+	public int[] scegliePietre() {
 		int i = 0, p = 0, r;
 		int[] pietre = new int[TamaGolemMain.NUM_PIETRE];
 		 do{
@@ -18,12 +18,13 @@ public class Scontro {
 				r = InputDati.leggiIntero("Quante pietre di questo tipo vuoi prendere dal sacco? ", 0, (TamaGolemMain.NUM_PIETRE - p));
 				}
 			p = p + r;
-			s1.togliPietre(t, r);
+			//s1.togliPietre(t, r);
 			for(int j = 0; j < r; j++) {
 				pietre[j] = t;
 			}
 			
 			}while(i < TamaGolemMain.NUM_PIETRE);
+		 return pietre;
 			
 	}
 
