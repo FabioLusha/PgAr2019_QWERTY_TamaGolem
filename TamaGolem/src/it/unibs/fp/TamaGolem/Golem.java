@@ -1,28 +1,34 @@
 package it.unibs.fp.TamaGolem;
 
 public class Golem {
+	
 	public static final int VITA_INIZIALE = 100;
 	
 	private int livVita = VITA_INIZIALE;
-	private String[] pietre = new String[TamaGolemMain.NUM_ELEMENTI];
+	private int[] tipiPietra = new int[TamaGolemMain.NUM_PIETRE];
 	
-	public Golem(int livVita, String[] gemme) {
-		super();
-		this.livVita = livVita;
-		this.pietre = gemme;
+	public Golem(int[] tipiPietra) {
+		this.tipiPietra = tipiPietra;
 	}
+
 	public int getLivVita() {
 		return livVita;
 	}
+
 	public void setLivVita(int livVita) {
 		this.livVita = livVita;
 	}
-	public String[] getGemme() {
-		return pietre;
+
+	public int[] getTipiPietra() {
+		return tipiPietra;
 	}
-	public void setGemme(String[] gemme) {
-		this.pietre = gemme;
+
+	public void setTipiPietra(int[] tipiPietra) {
+		this.tipiPietra = tipiPietra;
 	}
+
+	
+	
 
 
 }
