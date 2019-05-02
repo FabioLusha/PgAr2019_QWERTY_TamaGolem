@@ -41,7 +41,6 @@ public class TamaGolemMain {
 		System.out.println(tmp.mostraMatriceEquilibrio());
 		System.out.println(NUM_ELEMENTI);
 		
-		Sacco s1 = new Sacco();
 	
 		
 	}

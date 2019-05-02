@@ -25,4 +25,26 @@ public class Sacco {
 		return str;
 	}
 
+	public String[] getElementiUtilizabili() {
+		return elementiUtilizabili;
+	}
+
+	public void setElementiUtilizabili(String[] elementiUtilizabili) {
+		this.elementiUtilizabili = elementiUtilizabili;
+	}
+
+	public int[] getQuantita() {
+		return quantita;
+	}
+
+	public void setQuantita(int[] quantita) {
+		this.quantita = quantita;
+	}
+	
+	public void togliPietre(int indiceElemento, int quantitaDaTogliere) {
+		this.quantita[indiceElemento] -= quantitaDaTogliere;
+	}
+	
+	
+
 }
