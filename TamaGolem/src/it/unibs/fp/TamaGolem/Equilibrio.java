@@ -9,20 +9,20 @@ public class Equilibrio {
 	
 	public Equilibrio() 
 	{
-		matEquilibrio = new int[Gemma.NUM_GEMME][Gemma.NUM_GEMME];
+		matEquilibrio = new int[TamaGolemMain.NUM_ELEMENTI][TamaGolemMain.NUM_ELEMENTI];
 		int  k, i, j, somma =0, sommaVerticale = 0, rnd, segno;
 		
 			
-		for(i = 0; i < Gemma.NUM_GEMME -1 ; i++)
+		for(i = 0; i < TamaGolemMain.NUM_ELEMENTI -1 ; i++)
 		{
 			somma = 0;
 			
-				for(j = 0; j < Gemma.NUM_GEMME-1; j++) 
+				for(j = 0; j < TamaGolemMain.NUM_ELEMENTI-1; j++) 
 				{
 					somma += matEquilibrio[i][j];
 					sommaVerticale = 0;
 					if( j > i) {
-						for(k = 0; k < Gemma.NUM_GEMME; k++) {
+						for(k = 0; k < TamaGolemMain.NUM_ELEMENTI; k++) {
 							sommaVerticale += matEquilibrio[k][j];
 						}
 						rnd = generatoreCasuale.nextInt(Golem.VITA_INIZIALE) + 1;
@@ -31,32 +31,29 @@ public class Equilibrio {
 							rnd = -rnd;
 						if((somma > 0 && rnd > 0) | ( somma < 0 && rnd < 0))
 							rnd = -rnd;
-							/*se siamo nella penultima colonna e la somma con il valore per questa posizione da 0
-							 * bisogna intervenire per evitarlo
-							 */
-						if(j == Gemma.NUM_GEMME -2 && somma == 0) 
-							rnd += 1;
-					
 							
-						if( Math.abs(somma + rnd) > 100 || Math.abs(sommaVerticale + rnd) > 100) {
-							do {
+							
+						if( Math.abs(somma + rnd) > Golem.VITA_INIZIALE || Math.abs(sommaVerticale + rnd) > Golem.VITA_INIZIALE) {
+							do 
+							{
 								if(rnd > 0)
 									rnd -= (Golem.VITA_INIZIALE*0.1);
 								else
 									rnd += (Golem.VITA_INIZIALE*0.1);
-							}while( Math.abs(somma + rnd) > 100 || Math.abs(sommaVerticale + rnd)  > 100);
+							}while( Math.abs(somma + rnd) >= Golem.VITA_INIZIALE || Math.abs(sommaVerticale + rnd)  >= Golem.VITA_INIZIALE);
 						}
-							
-							
-							matEquilibrio[i][j] = rnd;
-							matEquilibrio[j][i] = -matEquilibrio[i][j];
-							somma += rnd;
-							System.out.printf("%4d ", matEquilibrio[i][j]);
-						}
-					else {
 						
-						System.out.printf("%4d ", 0);
-					}
+						/**
+						 * se siamo nella penultima colonna e la somma con il valore per questa posizione da 0
+						 * bisogna intervenire per evitarlo
+						 */
+						if(j == TamaGolemMain.NUM_ELEMENTI -2 && somma == 0) 
+							rnd += 1;
+							
+						matEquilibrio[i][j] = rnd;
+						matEquilibrio[j][i] = -matEquilibrio[i][j];
+						somma += rnd;
+						}
 				}
 				matEquilibrio[i][j] = -somma;
 				matEquilibrio[j][i] = -matEquilibrio[i][j];
@@ -65,10 +62,10 @@ public class Equilibrio {
 		
 			
 	
-	public String mostraEquilibrio() {
+	public String mostraMatriceEquilibrio() {
 		StringBuffer equilibrio = new StringBuffer();
-		for(int i = 0; i < Gemma.NUM_GEMME; i ++) {
-			for(int j = 0; j < Gemma.NUM_GEMME; j++) {
+		for(int i = 0; i < TamaGolemMain.NUM_ELEMENTI; i ++) {
+			for(int j = 0; j < TamaGolemMain.NUM_ELEMENTI; j++) {
 				equilibrio.append(String.format("%4d ", matEquilibrio[i][j]));
 			}
 			equilibrio.append("\n");

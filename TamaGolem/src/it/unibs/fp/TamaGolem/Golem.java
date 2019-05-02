@@ -4,9 +4,9 @@ public class Golem {
 	public static final int VITA_INIZIALE = 100;
 	
 	private int livVita = VITA_INIZIALE;
-	private Gemma[] gemme = new Gemma[Gemma.NUM_GEMME];
+	private Elementi[] gemme = new Elementi[TamaGolemMain.NUM_ELEMENTI];
 	
-	public Golem(int livVita, Gemma[] gemme) {
+	public Golem(int livVita, Elementi[] gemme) {
 		super();
 		this.livVita = livVita;
 		this.gemme = gemme;
@@ -17,10 +17,10 @@ public class Golem {
 	public void setLivVita(int livVita) {
 		this.livVita = livVita;
 	}
-	public Gemma[] getGemme() {
+	public Elementi[] getGemme() {
 		return gemme;
 	}
-	public void setGemme(Gemma[] gemme) {
+	public void setGemme(Elementi[] gemme) {
 		this.gemme = gemme;
 	}
 
