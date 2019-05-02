@@ -5,6 +5,10 @@ public class Giocatore {
 	private String nome;
 	private Golem[] golem = new Golem[NUMGOLEM];
 	
+	public Giocatore() {
+		this.nome = "";
+		this.golem = null;
+	}
 	public Giocatore(String nome, Golem[] golem) {
 		super();
 		this.nome = nome;

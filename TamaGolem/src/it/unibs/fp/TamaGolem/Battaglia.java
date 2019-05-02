@@ -2,10 +2,18 @@ package it.unibs.fp.TamaGolem;
 
 import it.unibs.fp.mylib.InputDati;
 
-public class Scontro {
-
+public class Battaglia {
+	Giocatore giocatore1;
+	Giocatore giocatore2;
+	Golem golem1;
+	Golem golem2;
+	Sacco s1;
 	
-	Sacco s1 = new Sacco();
+	public Battaglia() {
+		s1 = new Sacco();
+		giocatore1 = new Giocatore();
+		giocatore2 = new Giocatore();
+	}
 	
 	public int[] scegliePietre() {
 		int i = 0, p = 0, r;
@@ -19,15 +27,16 @@ public class Scontro {
 				r = InputDati.leggiIntero("Quante pietre di questo tipo vuoi prendere dal sacco? ", 0, (TamaGolemMain.NUM_PIETRE - p));
 				}
 			p = p + r;
-			//s1.togliPietre(t, r);
+			s1.togliPietre(t, r);
 			for(int j = 0; j < r; j++) {
 				pietre[j] = t;
 			}
 			
 			}while(i < TamaGolemMain.NUM_PIETRE);
 		 return pietre;
-			
 	}
+	
+	
 
 	
 }
