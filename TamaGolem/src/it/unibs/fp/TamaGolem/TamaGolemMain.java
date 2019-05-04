@@ -5,10 +5,11 @@ import it.unibs.fp.mylib.InputDati;
 
 public class TamaGolemMain {
 
-	private static final String MSG_GOLEM_DANNO = "Il golem di %s sceglie %s, quello di %s sceglie %s, %s infligge %d punti di danno";
+	private static final String MSG_TURNO_GIOCATORE = "\n******È IL TURNO DI %s *******\n";
+	private static final String MSG_GOLEM_DANNO = "Il golem di %s sceglie %s, quello di %s sceglie %s, %s infligge punti danno";
 	public static final String MSG_NUOVA_PARTITA = "Si vuole giocare un altra partita? ( 0 = no, 1 = sì)";
 	public static final String MSG_PARTITA_CONCLUSA = "La partita si è conclusa, il vincitore è: %s";
-	public static final String MSG_GOLEM_MORTO = "\n%s il tuo golem è morto! Evocane un altro\n";
+	public static final String MSG_GOLEM_MORTO = "\n***** %s il tuo golem è morto! Evocane un altro (te ne rimangono ancora %d)\n";
 	public static final String MSG_INPUT_NOME_GIOCATORE = "Inserire il nome del %s giocatore: ";
 	
 	public static final String[] ELEMENTI = {"FUOCO", "TERRA", "ACQUA", "VENTO", "ETERE", "FULMINE", 
@@ -20,10 +21,11 @@ public class TamaGolemMain {
 	
 	public static final int NUM_ELEMENTI = inputNumeroGemmeUsare();
 	
-	public static final int NUM_PIETRE = Math.round(((float)(NUM_ELEMENTI + 1)/3)+1);
-	public static final int NUM_GOLEM = Math.round(((float)(NUM_ELEMENTI -1 )*(NUM_ELEMENTI -2))/(2*NUM_PIETRE));
-	public static final int ELEMENTO_NEL_SACCO = Math.round((float)(2 * NUM_GOLEM * NUM_PIETRE)/NUM_ELEMENTI);
-	public static final int PIETRE_NEL_SACCO = Math.round(((float)(2 * NUM_GOLEM * NUM_PIETRE)/NUM_ELEMENTI)*NUM_ELEMENTI);
+	public static final int NUM_PIETRE = ((NUM_ELEMENTI + 1)/3)+1;
+	public static final int NUM_GOLEM = ((NUM_ELEMENTI -1 )*(NUM_ELEMENTI -2))/(2*NUM_PIETRE);
+	public static final int PIETRE_NEL_SACCO = (2 * NUM_GOLEM * NUM_PIETRE);
+	public static final int ELEMENTO_NEL_SACCO = (PIETRE_NEL_SACCO/NUM_ELEMENTI);
+	
 	
 
 	public static int inputNumeroGemmeUsare() {
@@ -46,7 +48,9 @@ public class TamaGolemMain {
 			Equilibrio equilibrio = new Equilibrio();
 			System.out.println(equilibrio.mostraMatriceEquilibrio());
 			Sacco sacco = new Sacco();
+			System.out.println(String.format(MSG_TURNO_GIOCATORE, giocatore1.getNome().toUpperCase()));
 			golem1 = new Golem(sacco.scegliePietre(giocatore1));
+			System.out.println(String.format(MSG_TURNO_GIOCATORE, giocatore2.getNome().toUpperCase()));
 			golem2 = new Golem(sacco.scegliePietre(giocatore2));
 			
 			while(giocatore1.getNumGolemDisponibili() > 0 && giocatore2.getNumGolemDisponibili() > 0)
@@ -56,11 +60,11 @@ public class TamaGolemMain {
 				{
 					int interazione = equilibrio.getInterazione(golem1.getPietraAttuale(), golem2.getPietraAttuale());
 					if( interazione> 0) {
-						System.out.println(String.format(MSG_GOLEM_DANNO, giocatore1.getNome(), ELEMENTI[golem1.getPietraAttuale()], giocatore2.getNome(), ELEMENTI[golem1.getPietraAttuale()],giocatore1.getNome(), interazione ));
+						System.out.println(String.format(MSG_GOLEM_DANNO, giocatore1.getNome(), ELEMENTI[golem1.getPietraAttuale()], giocatore2.getNome(), ELEMENTI[golem2.getPietraAttuale()],giocatore1.getNome()));
 						golem2.diminuisciVita(interazione);
 						}
 					else {
-						System.out.println(String.format(MSG_GOLEM_DANNO, giocatore1.getNome(), ELEMENTI[golem1.getPietraAttuale()],giocatore2.getNome(), ELEMENTI[golem1.getPietraAttuale()],giocatore2.getNome(), interazione ));
+						System.out.println(String.format(MSG_GOLEM_DANNO, giocatore1.getNome(), ELEMENTI[golem1.getPietraAttuale()],giocatore2.getNome(), ELEMENTI[golem2.getPietraAttuale()],giocatore2.getNome()));
 						golem1.diminuisciVita(interazione);
 					}
 					golem1.pietraSuccessiva();
@@ -68,12 +72,12 @@ public class TamaGolemMain {
 				}
 				
 				if(golem1.getLivVita() <= 0) {
-					System.out.println(String.format(MSG_GOLEM_MORTO, giocatore1.getNome()));
+					System.out.println(String.format(MSG_GOLEM_MORTO, giocatore1.getNome(), giocatore1.getNumGolemDisponibili()));
 					golem1 = new Golem(sacco.scegliePietre(giocatore1));
 					giocatore1.diminuisciNumGolem();
 				}
 				else if(golem2.getLivVita() <= 0) {
-					System.out.println(String.format(MSG_GOLEM_MORTO, giocatore2.getNome()));
+					System.out.println(String.format(MSG_GOLEM_MORTO, giocatore2.getNome(), giocatore2.getNumGolemDisponibili()));
 					golem2 = new Golem(sacco.scegliePietre(giocatore2));
 					giocatore2.diminuisciNumGolem();
 				}

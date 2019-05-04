@@ -1,6 +1,7 @@
 package it.unibs.fp.TamaGolem;
 
 import it.unibs.fp.mylib.InputDati;
+import java.util.Random;
 
 public class Sacco {
 
@@ -8,9 +9,21 @@ public class Sacco {
 	private int[] quantita; 
 	
 	public Sacco() {
+		Random randomGenerator = new Random();
 		elementiUtilizabili = new String[TamaGolemMain.NUM_ELEMENTI];
 		quantita = new int[TamaGolemMain.NUM_ELEMENTI];
-		for(int i = 0; i < TamaGolemMain.NUM_ELEMENTI; i++) quantita[i] = TamaGolemMain.ELEMENTO_NEL_SACCO;
+		for(int i = 0; i < TamaGolemMain.NUM_ELEMENTI; i++) 
+			quantita[i] = TamaGolemMain.ELEMENTO_NEL_SACCO;
+		/*
+		 * visto che la diponibilià di un elemento nel sacco e dato dal rappoto dalle pietre disponibili con il numero di elementi diponibili.
+		 * La divisione tra interi avviene senza arrotondamento pertanto può risultare che il prodotto del numero di pietre di un elemento nel
+		 * sacco per il numero di elementi sia minore del numero di pietre totali. Per ovviare a questo problema, aggiungo nel sacco delle pietre
+		 * estratte casualmente finchè non si pareggiano i conti.
+		 */
+		for(int i = 0; i < (TamaGolemMain.PIETRE_NEL_SACCO - (TamaGolemMain.NUM_ELEMENTI * TamaGolemMain.ELEMENTO_NEL_SACCO)); i++) {
+			int tmp = randomGenerator.nextInt(TamaGolemMain.NUM_ELEMENTI);
+			quantita[tmp]++;
+		}
 		System.arraycopy(TamaGolemMain.ELEMENTI, 0, elementiUtilizabili, 0, TamaGolemMain.NUM_ELEMENTI);
 	}
 
