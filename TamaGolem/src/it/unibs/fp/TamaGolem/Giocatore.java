@@ -1,18 +1,19 @@
 package it.unibs.fp.TamaGolem;
 
 public class Giocatore {
-	public static final int NUMGOLEM = 4;
+
 	private String nome;
-	private Golem[] golem = new Golem[NUMGOLEM];
+	private int numGolemDisponibili;
 	
-	public Giocatore() {
-		this.nome = "";
-		this.golem = null;
-	}
-	public Giocatore(String nome, Golem[] golem) {
-		super();
+
+	public Giocatore(String nome) {
 		this.nome = nome;
-		this.golem = golem;
+		this.numGolemDisponibili = TamaGolemMain.NUM_GOLEM;
+	}
+
+	public Giocatore() {
+		this("");
+
 	}
 
 	public String getNome() {
@@ -23,11 +24,15 @@ public class Giocatore {
 		this.nome = nome;
 	}
 
-	public Golem[] getGolem() {
-		return golem;
+	public int getNumGolemDisponibili() {
+		return numGolemDisponibili;
 	}
 
-	public void setGomlem(Golem[] golem) {
-		this.golem = golem;
+	public void setNumGolemDisponibili(int nuovoVal){
+		this.numGolemDisponibili = nuovoVal;
+	}
+
+	public void diminuisciNumGolem(){
+		this.numGolemDisponibili--;
 	}
 }

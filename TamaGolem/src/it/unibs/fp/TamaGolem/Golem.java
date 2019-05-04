@@ -4,31 +4,41 @@ public class Golem {
 	
 	public static final int VITA_INIZIALE = 100;
 	
-	private int livVita = VITA_INIZIALE;
-	private int[] tipiPietra = new int[TamaGolemMain.NUM_PIETRE];
+	private int livVita;
+	private int[] pietre;// = new int[TamaGolemMain.NUM_PIETRE];
+	private int posizionePietraAttuale;
 	
-	public Golem(int[] tipiPietra) {
-		this.tipiPietra = tipiPietra;
+	public Golem(int[] pietre) {
+		this.livVita = VITA_INIZIALE;
+		this.pietre = pietre;
+		this.posizionePietraAttuale = 0;
 	}
 
 	public int getLivVita() {
 		return livVita;
 	}
 
-	public void setLivVita(int livVita) {
-		this.livVita = livVita;
+
+	public int[] getPietre() {
+		return pietre;
 	}
 
-	public int[] getTipiPietra() {
-		return tipiPietra;
+	public void setPietre(int[] pietre) {
+		this.pietre = pietre;
 	}
 
-	public void setTipiPietra(int[] tipiPietra) {
-		this.tipiPietra = tipiPietra;
+	public int getPietraAttuale() {
+		return pietre[posizionePietraAttuale];
 	}
 
+	/**
+	 * Visto che le pietre si ripetono ciclicamente il modulo risulta
+	 */
+	public void pietraSuccessiva(){
+		this.posizionePietraAttuale = (this.posizionePietraAttuale+1) % TamaGolemMain.NUM_PIETRE;
+	}
 	
-	
-
-
+	public void diminuisciVita(int quanto) {
+		this.livVita -= Math.abs(quanto);
+	}
 }
