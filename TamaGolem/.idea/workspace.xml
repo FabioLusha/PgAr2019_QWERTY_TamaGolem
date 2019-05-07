@@ -6,17 +6,15 @@
     <bookmark url="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java" line="79" />
     <bookmark url="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java" line="75" />
     <bookmark url="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" line="29" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="900d40c3-6ae5-43b8-b456-7d577942200f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/Equilibrio.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/Equilibrio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Fase1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/Giocatore.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/Giocatore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/TamaGolemMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/it/unibs/fp/TamaGolem/TamaGolemMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Giocatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Giocatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Scontro.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,8 +32,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Giocatore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="287">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#446#447#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,22 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="37" column="69" selection-start-line="37" selection-start-column="69" selection-end-line="37" selection-end-column="69" />
-              <folding>
-                <element signature="e#301#302#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#531#532#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#748#749#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="390">
+              <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -66,20 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <element signature="e#502#503#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#603#604#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#695#696#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#777#778#0" expanded="true" />
-                <element signature="e#816#817#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="540">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -87,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
+            <state relative-caret-position="1980">
               <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
               <folding>
                 <element signature="e#6345#6346#0" expanded="true" />
@@ -97,23 +72,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="383">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.base/java/io/FileInputStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-              <folding>
-                <element signature="e#1617#1618#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2364">
+              <caret line="242" column="23" selection-start-line="242" selection-start-column="23" selection-end-line="242" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -137,9 +109,9 @@
         <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java" />
         <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Giocatore.java" />
         <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java" />
-        <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" />
         <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java" />
         <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java" />
+        <option value="$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java" />
       </list>
     </option>
   </component>
@@ -183,6 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../UniBSFpLib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -247,7 +220,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -265,11 +238,38 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Fase1.java" />
+    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java" />
+    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Equilibrio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
+        <state relative-caret-position="1980">
           <caret line="136" column="13" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
           <folding>
             <element signature="e#6345#6346#0" expanded="true" />
@@ -278,67 +278,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Golem.java">
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.base/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="69" selection-start-line="37" selection-start-column="69" selection-end-line="37" selection-end-column="69" />
-          <folding>
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2364">
+          <caret line="242" column="23" selection-start-line="242" selection-start-column="23" selection-end-line="242" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Giocatore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Sacco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="287">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/TamaGolemMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/unibs/fp/TamaGolem/Battaglia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <element signature="e#1617#1618#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="383">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
         </state>
       </provider>
     </entry>

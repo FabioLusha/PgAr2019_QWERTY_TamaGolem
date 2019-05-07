@@ -59,21 +59,21 @@ public class Equilibrio {
 	 */
 	public Equilibrio() 
 	{
-		matEquilibrio = new int[TamaGolemMain.NUM_ELEMENTI][TamaGolemMain.NUM_ELEMENTI];
+		matEquilibrio = new int[TamaGolemMain.numElementi][TamaGolemMain.numElementi];
 		int  k, i, j, somma, sommaVerticale, interazione, segno;
 		
 			
-		for(i = 0; i < TamaGolemMain.NUM_ELEMENTI -1 ; i++)
+		for(i = 0; i < TamaGolemMain.numElementi -1 ; i++)
 		{
 			somma = 0;
 			
-				for(j = 0; j < TamaGolemMain.NUM_ELEMENTI-1; j++) 
+				for(j = 0; j < TamaGolemMain.numElementi-1; j++) 
 				{
 					somma += matEquilibrio[i][j];
 					sommaVerticale = 0;
 					if( j > i)
 					{
-						for(k = 0; k < TamaGolemMain.NUM_ELEMENTI; k++) {
+						for(k = 0; k < TamaGolemMain.numElementi; k++) {
 							sommaVerticale += matEquilibrio[k][j];
 						}
 						//ref1
@@ -99,7 +99,7 @@ public class Equilibrio {
 						}
 
 						//ref6
-						if(j == TamaGolemMain.NUM_ELEMENTI -2 && somma == 0)
+						if(j == TamaGolemMain.numElementi -2 && somma == 0)
 						{
 							if(interazione < 0)
 								do interazione += 1; while(interazione == 0);
@@ -131,14 +131,26 @@ public class Equilibrio {
 
 	public String mostraMatriceEquilibrio() {
 		StringBuilder equilibrio = new StringBuilder();
-		for(int i = 0; i < TamaGolemMain.NUM_ELEMENTI; i ++) {
-			for(int j = 0; j < TamaGolemMain.NUM_ELEMENTI; j++) {
+		for(int i = 0; i < TamaGolemMain.numElementi; i ++) {
+			for(int j = 0; j < TamaGolemMain.numElementi; j++) {
 				equilibrio.append(String.format("%4d ", matEquilibrio[i][j]));
 			}
 			equilibrio.append("\n");
 		}
 		return equilibrio.toString();
 
+	}
+	
+	public String mostraEquilibrio() {
+		StringBuilder str = new StringBuilder();
+		for(int i = 0; i < TamaGolemMain.numElementi; i++) {
+			for(int j = 0; j < TamaGolemMain.numElementi; j++) {
+				if(matEquilibrio[i][j] > 0)
+					str.append(TamaGolemMain.ELEMENTI[i] + " dannegia -> " + TamaGolemMain.ELEMENTI[j] + "; punti danno: "+ matEquilibrio[i][j]+"\n");
+			}
+		}
+			
+		return str.toString();
 	}
 }
 	

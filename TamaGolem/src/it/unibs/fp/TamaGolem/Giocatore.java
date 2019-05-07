@@ -8,12 +8,11 @@ public class Giocatore {
 
 	public Giocatore(String nome) {
 		this.nome = nome;
-		this.numGolemDisponibili = TamaGolemMain.NUM_GOLEM;
+		this.numGolemDisponibili = TamaGolemMain.numGolem;
 	}
 
 	public Giocatore() {
-		this("");
-
+		this("XXX");
 	}
 
 	public String getNome() {
@@ -33,6 +32,6 @@ public class Giocatore {
 	}
 
 	public void diminuisciNumGolem(){
-		this.numGolemDisponibili--;
+		this.numGolemDisponibili = this.numGolemDisponibili - 1;
 	}
 }
