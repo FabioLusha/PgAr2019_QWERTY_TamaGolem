@@ -12,7 +12,7 @@ public class TamaGolemMain {
 	public static final String MSG_TURNO_GIOCATORE = "\n******È IL TURNO DI %s *******\n";
 	public static final String MSG_GOLEM_DANNO = "Il golem di %s sceglie %s, quello di %s sceglie %s, %s infligge punti danno";
 	public static final String MSG_NUOVA_PARTITA = "Si vuole giocare un altra partita? ( 0 = no, 1 = sì)";
-	public static final String MSG_PARTITA_CONCLUSA = "La partita si è conclusa, il vincitore è: %s";
+	public static final String MSG_PARTITA_CONCLUSA = "\nLa partita si è conclusa, il vincitore è: %s";
 	public static final String MSG_GOLEM_MORTO = "\n***** %s il tuo golem è morto! Evocane un altro (te ne rimangono ancora %d)\n";
 	public static final String MSG_INPUT_NOME_GIOCATORE = "Inserire il nome del %s giocatore: ";
 	
@@ -43,7 +43,7 @@ public class TamaGolemMain {
 		Golem golem2;
 
 		
-		int scelta = 0;
+		int nuovaPartita = 0;
 		
 		do {
 			numElementi = inputNumeroGemmeUsare();
@@ -60,9 +60,9 @@ public class TamaGolemMain {
 			Equilibrio equilibrio = new Equilibrio();
 			Sacco sacco = new Sacco();
 			System.out.println(String.format(MSG_TURNO_GIOCATORE, giocatore1.getNome().toUpperCase()));
-			golem1 = new Golem(sacco.scegliePietre(giocatore1));
+			golem1 = new Golem(giocatore1, sacco);
 			System.out.println(String.format(MSG_TURNO_GIOCATORE, giocatore2.getNome().toUpperCase()));
-			golem2 = new Golem(sacco.scegliePietre(giocatore2));
+			golem2 = new Golem(giocatore2, sacco);
 			
 			battaglia(giocatore1, giocatore2, golem1, golem2, equilibrio, sacco);
 			
@@ -75,15 +75,25 @@ public class TamaGolemMain {
 			System.out.println(MSG_MOSTRA_EQUILIBRIO);
 			System.out.println(equilibrio.mostraEquilibrio());
 			
-			scelta = InputDati.leggiIntero(MSG_NUOVA_PARTITA);
-		}while(scelta == 1);
+			nuovaPartita = InputDati.leggiIntero(MSG_NUOVA_PARTITA);
+		}while(nuovaPartita == 1);
 	}
-
-	public static void battaglia(Giocatore giocatore1, Giocatore giocatore2, Golem golem1, Golem golem2,
-			Equilibrio equilibrio, Sacco sacco) {
+	
+	/**
+	 * si esegue un loop finché il numero di golem a disposizione di uno dei 2 giocatori non arriva a 0. Viene creata la variabile perdente di tipo Giocatore
+	 * che viene inizializzata dal metodo scontro(...) e quindi punta al giocatore risultante sconfitto dallo scontro. Al perdente viene diminuito il
+	 * numero di golme disponibile di 1 grazie al metodo .diminuisciNumGolem(). Successivamente, se il numero di golm del perdente fosse maggiore di 0
+	 * questo può procedere con l'evocazione di un nuovo golem altrimenti si esce dal ciclo.
+	 * @param giocatore1 uno dei 2 giocatori
+	 * @param giocatore2 il giocatore avversario
+	 * @param golem1 il golem del primo giocatore
+	 * @param golem2 il golem dell'avversario
+	 * @param equilibrio della partita
+	 * @param sacco da qui estrarre gli elementi
+	 */
+	public static void battaglia(Giocatore giocatore1, Giocatore giocatore2, Golem golem1, Golem golem2, Equilibrio equilibrio, Sacco sacco) {
 		while(giocatore1.getNumGolemDisponibili() > 0 && giocatore2.getNumGolemDisponibili() > 0)
 		{
-			
 			Giocatore perdente = golem1.scontro(giocatore1, giocatore2, golem2, equilibrio);
 			//perdente è una variabile che punta all'oggetto giocatore1 o giocatore2
 			perdente.diminuisciNumGolem();
@@ -103,11 +113,19 @@ public class TamaGolemMain {
 		
 		}
 	}
-
+	
+	/**
+	 * Creo un nuovo oggetto di tipo golem controllando che non abbiamo lo stesso set di pietre nello stesso ordine e nel caso lo fossero
+	 * richiamo il metodo per annullare l'operazione e rimettere le pietre nel sacco
+	 * @param golemAvversario il golem avversario (per confrontare il set di pietre)
+	 * @param sacco da dove si scelgono le pietre
+	 * @param giocatorePossessore a cui è assegnato il golem
+	 * @return la variabile che punta al neo-oggetto Golem creato nel metodo
+	 */
 	public static Golem evocaGolem(Golem golemAvversario, Sacco sacco, Giocatore giocatorePossessore) {
 		Golem golemDaEvocare;
 		do {
-		golemDaEvocare = new Golem(sacco.scegliePietre(giocatorePossessore));
+		golemDaEvocare = new Golem(giocatorePossessore, sacco);
 		if(golemDaEvocare.arrayPietreUgualiAncheNellOrdine(golemAvversario)) {
 			sacco.rimettiPietreNelSacco(golemDaEvocare.getPietre());
 			System.out.println(MSG_SET_PIETRE_UGUALI);

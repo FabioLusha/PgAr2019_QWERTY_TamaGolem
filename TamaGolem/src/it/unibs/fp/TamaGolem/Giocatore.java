@@ -3,6 +3,9 @@ package it.unibs.fp.TamaGolem;
 public class Giocatore {
 
 	private String nome;
+	/**
+	 * Il numero di golem a disposizione dell'utente viene salvata in una vaiabile intera che viene modificata ogni volta che è necessario
+	 */
 	private int numGolemDisponibili;
 	
 
